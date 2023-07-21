@@ -1,0 +1,285 @@
+@font-face {
+    font-family: "Mustica";
+    src: local("Mustica Pro SemBd"),
+    url("../fonts/MusticaPro-SemiBold.otf");
+}
+
+@font-face {
+    font-family: "Mont";
+    src: local("Mont-ExtraLightDEMO"),
+    url("../fonts/Mont-ExtraLightDEMO.otf");
+}
+
+body {
+    background-color: rgb(253, 253, 253);
+}
+
+.navbar-brand {
+    background-color: #9a29c7;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+    font-family: "Mustica";
+    font-size: 30px;
+}
+.navbar-nav{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+.page-header h1 {
+    font-family: "Mustica";
+}
+
+.welcome-info {
+    margin-top: 15px;
+    font-family: "Mustica";
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(83, 83, 83);
+    text-align: center;
+}
+
+.welcome-info .welcome-text {
+    width: 500px;
+    color: rgb(105, 105, 105);
+}
+
+.welcome-text {
+    background-color: rgb(238, 238, 238);
+    padding: 10px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.home-image {
+    margin-top: 15px;
+    width: 500px;
+    height: 333px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    background-image: url("../images/support-splash.jpg");
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.login-forms {
+    margin-top: 25px;
+}
+
+.register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.register-form {
+    margin-top: 25px;
+    padding: 25px;
+    outline: rgb(212, 212, 212) solid 2px;
+    border-radius: 6px;
+}
+
+.create-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.ticket-title {
+    resize: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket-information {
+    width: 400px;
+}
+
+
+
+.form-group {
+    width: 250px;
+}
+
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea,
+.post-form input {
+    width: 100%;
+}
+
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a,
+.post h2 a:visited {
+    color: #000000;
+}
+
+.post > .date,
+.post > .actions {
+    float: right;
+}
+
+.btn-secondary,
+.btn-secondary:visited {
+    color: #C25100;
+    background: none;
+    border-color: #C25100;
+}
+
+.btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #C25100;
+}
+
+.welcome-alert {
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(160, 160, 160);
+    font-family: "Mont";
+}
+
+td {
+    display: block;
+}
+
+
+.even {
+    background-color: rgb(255, 255, 255);
+    border:2px solid #e6e3e9b6;
+}
+
+.odd {
+    background-color: #e6e3e9b6;
+}
+.odd .ticket-title {
+    /* color: white; */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.014);
+}
+
+.even .ticket-title {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.014);
+}
+
+.center-container {
+    display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.your-tickets {
+    margin-top: 15px;
+}
+
+.ticket-container table {
+
+    padding: 40px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ticket-container {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.ticket-btn-container {
+    display: flex;
+    justify-content: left;
+}
+
+.ticket-btn {
+    display: flex;
+    justify-content: center;
+    margin-left: 7px;
+    margin-bottom: 10px;
+    width: 75px;
+    text-align: center;
+    color:white;
+    text-decoration: none;
+    background-color: #5a5a5a;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.ticket-subject {
+    margin-left: 15px;
+    margin-right: 15px;
+    /* margin: 0px 20px 0px 20px; */
+    background-color: rgb(238, 238, 238);
+    outline: rgba(19, 19, 19, 0.349) solid 1px;
+    padding: 10px;
+    border-radius: 2px;
+    display: inline-flex;
+}
+
+.ticket-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .ticket-title small {
+    margin: 0;
+    margin-left: 7px;
+  }
+  
+  .ticket-title h2 {
+    padding: 0px 0px 5px 10px;
+    margin: 0;
+    font-size: 26px;
+  }
+
+
+  td hr {
+    padding: 0;
+    margin-bottom: 25px;
+  }
+
+
+  .subject-item {
+    font-size: .875em;
+    margin-left: 7px;
+    padding: 0;
+    margin-bottom: 10px;
+  }

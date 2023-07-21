@@ -1,0 +1,10 @@
+{% extends 'helpcenter\base_layout.html' %} {% block content %}
+<p>hellfso</p>
+
+{% for posts in user_posts %}
+<article>
+  <time>published: {{ user_posts.published_date }}</time>
+  <h2><a href="">{{ user_posts.title }}</a></h2>
+  <p>{{ user_posts.text|linebreaksbr }}</p>
+</article>
+{% endfor %} {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'helpcenter\base_layout.html' %} {% block content %}
+<h1 class="text-center your-tickets">Your Tickets</h1>
+<div class="center-container">
+  <div class="ticket-container">
+    <table>
+      <tr>
+        {% for post in user_tickets %}
+        <td class="{% cycle 'odd' 'even' %}">
+          <article>
+            <div class="ticket-title">
+              <small>Title:</small>
+              <h2>{{ post.title }}</h2>
+            </div>
+            <hr />
+            <div>
+              <p class="subject-item">Subject:</p>
+              <p class="ticket-subject">{{ post.subject|linebreaksbr }}</p>
+            </div>
+            <div class="ticket-btn-container">
+              <a
+                href="{% url 'edit_ticket' ticket_id=post.id %}"
+                class="ticket-btn btn btn-info edit-status-btn edit-status-btn"
+                >Edit</a
+              >
+              <a href="" class="ticket-btn btn btn-info edit-status-btn"
+                >Status</a
+              >
+              <a
+                href="{% url 'delete-ticket' ticket_id=post.id %}"
+                class="ticket-btn btn btn-info delete-btn"
+                >Delete</a
+              >
+            </div>
+          </article>
+        </td>
+        {% endfor %}
+      </tr>
+    </table>
+  </div>
+</div>
+{% if not user_tickets %}
+<p>No tickets available.</p>
+{% endif %} {% endblock %}

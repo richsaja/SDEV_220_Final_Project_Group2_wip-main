@@ -1,6 +1,6 @@
 {% extends 'helpcenter\base_layout.html' %} {% block content %}
 <div class="create-page">
-  <h1 class="ticket-form-title">Ticket Form</h1>
+  <h1 class="text-center support-portal ticket-form">Ticket Form</h1>
   <form action="" method="POST">
     {% csrf_token %}
     <div class="form-group">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Information</label>
+      <label for="exampleFormControlTextarea1">Subject</label>
       <textarea
         class="form-control ticket-information"
         id="exampleFormControlTextarea1"

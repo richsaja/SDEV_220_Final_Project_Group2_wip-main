@@ -1,5 +1,5 @@
 {% extends 'helpcenter\base_layout.html' %} {% block content %}
-<h1 class="text-center your-tickets">Your Tickets</h1>
+<h1 class="text-center support-portal">Your Tickets</h1>
 <div class="center-container">
   <div class="ticket-container">
     <table>
@@ -39,5 +39,5 @@
   </div>
 </div>
 {% if not user_tickets %}
-<p>No tickets available.</p>
+<p class="text-center">No tickets available.</p>
 {% endif %} {% endblock %}

@@ -4,11 +4,26 @@
     url("../fonts/MusticaPro-SemiBold.otf");
 }
 
+
+@font-face {
+    font-family: "infinity";
+    src: local("infinity"),
+    url("../fonts/MADEINFINITY\ PERSONALUSE-Medium.otf");
+}
+
+
 @font-face {
     font-family: "Mont";
     src: local("Mont-ExtraLightDEMO"),
     url("../fonts/Mont-ExtraLightDEMO.otf");
 }
+
+@font-face {
+    font-family: "barq";
+    src: local("barq.bold"),
+    url("../fonts/barq.bold.ttf");
+}
+
 
 body {
     background-color: rgb(253, 253, 253);
@@ -170,9 +185,9 @@ body {
 }
 
 .welcome-alert {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     text-align: center;
-    color: rgb(160, 160, 160);
+    color: rgba(160, 160, 160, 0.651);
     font-family: "Mont";
 }
 
@@ -283,3 +298,60 @@ td {
     padding: 0;
     margin-bottom: 10px;
   }
+
+
+
+  .flex-container-home {
+    margin-top: 75px;
+    display: flex;
+    height: 500px;
+    width: auto;
+    justify-content: center;
+}
+
+.flex-item {
+    flex: 0 0 auto;
+    font-size: 24px;
+}
+
+.flex-item1 {
+    margin-top: 25px;
+}
+
+.container h2 a {
+    text-decoration: none;
+    color: #688fe4;
+}
+
+.flex-image-home {
+    margin-left: 25px;
+    flex: 0 0 450px; /* Set a fixed width for the image (adjust as needed) */
+    height: 300px;
+    background-image: url("../images/logged-in-splash.jpg");
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center center;
+    border-radius: 8px;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.322));
+}
+
+.support-portal {
+    font-family: "mustica";
+    margin-top: 15px;
+    color: rgb(128, 151, 255);
+    font-size: 60px;
+}
+
+
+.home-hr {
+    width:20%;
+    margin:0 auto;
+}
+
+.form-group {
+    margin-right: 150px;
+}
+
+.ticket-form {
+    margin-bottom: 50px;
+}

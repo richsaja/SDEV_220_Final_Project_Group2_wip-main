@@ -8,6 +8,7 @@ from .models import Ticket
 from .forms import EditTicketForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib import messages
 
 # Create your views here.
 
@@ -35,6 +36,7 @@ def create(request):
         if request.user.is_authenticated:
             new_ticket = Ticket(title=ticket_title, subject=subject, author=request.user)
             new_ticket.save()
+            messages.success(request, "Ticket Added Successfully")
         else:
             messages.error(request, "Log in to create a ticket.")
 
@@ -111,4 +113,5 @@ def edit_ticket(request, ticket_id):
 def delete_ticket(request, ticket_id):
     del_ticket = Ticket.objects.get(pk=ticket_id)
     del_ticket.delete()
+    messages.success(request, "Ticket Deleted Successfully")
     return redirect('tickets')

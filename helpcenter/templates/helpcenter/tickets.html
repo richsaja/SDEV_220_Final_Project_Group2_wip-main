@@ -1,5 +1,13 @@
 {% extends 'helpcenter/base_layout.html' %} {% block content %}
 <h1 class="text-center support-portal">Your Tickets</h1>
+<article class="container">
+  {% for msg in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{ msg }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+</article>
 <div class="center-container">
   <div class="ticket-container">
     <table>

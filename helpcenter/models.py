@@ -18,10 +18,15 @@ class Ticket(models.Model):
         )
     # The "title" field-- a brief summary of the subject to follow.
     title = models.CharField(max_length=200)
+    last_updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     # The "subject" field-- a detailed description of the above-mentioned title.
     subject = models.TextField()
     # The "submitted_date" field-- a timestamp of the ticket creation date.
-    submitted_date = models.DateTimeField(blank=True, null=True, editable=False)
+    # submitted_date = models.DateTimeField(blank=True, null=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
     # The "status" field-- tracks the support status of the ticket. (not implemented)
     class Status(models.IntegerChoices):
         '''Enum setup for the status field.'''

@@ -117,6 +117,7 @@ body {
 
 .ticket-information {
     width: 400px;
+    margin-top: 10px;
 }
 
 
@@ -234,6 +235,7 @@ td {
 .ticket-container {
     text-align: left;
     margin-bottom: 50px;
+    margin-top: 65px;
 }
 
 .ticket-btn-container {
@@ -302,7 +304,7 @@ td {
 
 
   .flex-container-home {
-    margin-top: 75px;
+    margin-top: 95px;
     display: flex;
     height: 500px;
     width: auto;
@@ -354,4 +356,162 @@ td {
 
 .ticket-form {
     margin-bottom: 50px;
+}
+
+
+.ticket-message {
+    width: 50%;
+    height: 250px;
+}
+
+.alert-container {
+    margin-top: 12px;
+    position: fixed; 
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.alert {
+    width: 25%;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.no-tickets {
+    margin-top: 50px;
+}
+
+.alert-right{
+    width: 90%;
+    /* float: right; */
+    position: fixed; 
+    text-align: right;
+    /* margin: 250px; */
+    display: inline-block;
+}
+
+.invis {
+    display: none;
+}
+
+
+.edit-form p textarea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    margin-top: 10px;
+    border: solid 1px #dee2e6;
+    height: 86px;
+    border-radius: 5px;
+}
+
+
+
+.edit-form p input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: solid 1px #dee2e6;
+    border-radius: 5px;
+}
+
+.update-info {
+    margin-left: 7px;
+    margin-bottom: 7px;
+}
+
+
+
+
+
+.even-staff  {
+    background-color: rgb(56, 56, 56);
+    border:2px solid rgb(32, 32, 32);
+}
+
+.odd-staff  {
+    background-color: rgb(32, 32, 32);
+}
+
+
+.ticket-title-staff {
+    color: white;
+}
+
+.subject-item-staff {
+    color: white;
+    font-size: .875em;
+    margin-left: 7px;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+
+
+.ticket-title-staff {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .ticket-title-staff small {
+    margin: 0;
+    margin-left: 7px;
+  }
+  
+  .ticket-title-staff h2 {
+    padding: 0px 0px 5px 10px;
+    margin: 0;
+    font-size: 26px;
+  }
+
+  .hr-staff {
+    color: white;
+  }
+
+  .update-info-staff {
+    margin-left: 7px;
+    margin-bottom: 7px;
+    color: white;
+}
+
+
+.ticket-subject-staff {
+    margin-left: 15px;
+    margin-right: 15px;
+    /* margin: 0px 20px 0px 20px; */
+    background-color: rgb(77, 77, 77);
+    color: white;
+    outline: rgba(19, 19, 19, 0.349) solid 1px;
+    padding: 10px;
+    border-radius: 2px;
+    display: inline-flex;
+}
+
+.author {
+    /* float: right; */
+    color: rgb(99, 206, 99);
+    margin-left: 10px;
+}
+
+.status-lbl {
+    color: white;
+}
+
+.status {
+    background-color: rgb(95, 95, 95);
+    color: white;
+    /* outline: rgba(19, 19, 19, 0.349) solid 1px; */
+    border: none;
+    width: 75px;
+    height: 26px;
+    border-radius: 5px;
+    margin-left: 7px;
 }

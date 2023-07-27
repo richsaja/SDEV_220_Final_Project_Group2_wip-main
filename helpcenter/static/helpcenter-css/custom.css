@@ -72,3 +72,19 @@
     color: white;
     background-color: rgb(175, 56, 56);
   }
+
+.delete-btn:hover {
+    background-color: rgb(221, 57, 57);
+    color: white;
+}
+
+.delete-btn:active {
+    background-color: rgb(221, 57, 57) !important;
+    color: white !important;
+}
+
+
+
+.btn-info {
+    border: none;
+}

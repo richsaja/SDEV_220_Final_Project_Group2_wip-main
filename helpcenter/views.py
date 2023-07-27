@@ -8,6 +8,7 @@ from .models import Ticket
 from .forms import EditTicketForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -26,6 +27,7 @@ def tickets(request):
     return render(request, 'helpcenter/tickets.html', {'user_tickets': user_tickets})
 
 
+@login_required
 def create(request):
     if request.method == "POST":
         
@@ -35,20 +37,34 @@ def create(request):
         if request.user.is_authenticated:
             new_ticket = Ticket(title=ticket_title, subject=subject, author=request.user)
             new_ticket.save()
+            messages.success(request, "Ticket Added Successfully")
         else:
-            messages.error(request, "Log in to create a ticket.")
+            messages.error(request, "Login to create a ticket.")
 
         return redirect("home")
     else:
         return render(request, 'helpcenter/create.html', {})
 
-def list(request):
+# def list(request):
 
-    return render(request, 'helpcenter/list.html', {})
+#     return render(request, 'helpcenter/list.html', {})
 
 def about(request):
 
     return render(request, 'helpcenter/about.html', {})
+
+def list(request):
+
+    if request.user.is_staff:
+        user_tickets = Ticket.objects.all()
+    else:
+        user_tickets = [] 
+
+    return render(request, 'helpcenter/list.html', {'user_tickets': user_tickets})
+
+
+
+
 
 def login_user(request):
     if request.method == "POST":
@@ -59,7 +75,7 @@ def login_user(request):
             login(request, user)
             return redirect("home")
         else:
-            messages.success(request, ("there was an error"))
+            messages.success(request, ("There was an Error"))
             return redirect("login")
     else:
         return render(request, 'helpcenter/login.html', {})
@@ -86,9 +102,11 @@ def redirect_home(request):
 
 def logout_user(request):
     logout(request)
-    messages.success(request, ("Logged out.."))
+    messages.success(request, ("Logged Out.."))
     return redirect("home")
 
+
+@login_required
 def edit_ticket(request, ticket_id):
 
     ticket = get_object_or_404(Ticket, pk=ticket_id)
@@ -101,14 +119,18 @@ def edit_ticket(request, ticket_id):
         form = EditTicketForm(request.POST, instance=ticket)
         if form.is_valid():
             form.save()
-            messages.success(request, "Ticket updated")
+            messages.success(request, "Ticket Updated")
             return HttpResponseRedirect(reverse('tickets'))
     else:
         form = EditTicketForm(instance=ticket)
 
     return render(request, 'helpcenter/edit_ticket.html', {'form': form, 'ticket': ticket})
 
+
+
+@login_required
 def delete_ticket(request, ticket_id):
     del_ticket = Ticket.objects.get(pk=ticket_id)
     del_ticket.delete()
+    messages.success(request, ("Ticket Deleted"))
     return redirect('tickets')

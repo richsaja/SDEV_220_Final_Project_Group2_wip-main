@@ -1,20 +1,31 @@
-{% extends 'helpcenter\base_layout.html' %}
+{% extends 'helpcenter/base_layout.html' %}
 {% block content %}
     {% if user.is_authenticated %}
     <h1 class="text-center support-portal">Group 2 Support Portal</h1>
     <h1 class="welcome-alert">Welcome, {{ user }}</h1>
     {% endif %} {% if user.is_authenticated %}
     <hr class="home-hr">
+   
+    {% for msg in messages %}
+    <div class="alert-container">
+    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+      <strong>{{ msg }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+    {% endfor %}
     <div class="flex-container-home">
       <div class="flex-item flex-item1">
       <article class="container">
+         
+
       <h2><a href="\tickets\create" class="ticket-home-link">Create a Ticket!</a></h2>
       <small>Create a ticket here.</small>   
       {% if user.is_staff %}
       <h2><a href="\tickets\">View/edit your tickets</a></h2>
       <small>Review your existing tickets here!</small>
 
-      <h2><a href="\tickets\all">View all tickets</a></h2>
+      <h2><a href="\tickets\all" class="staff-home-link">View all tickets</a></h2>
       <small>Review all existing tickets here!</small>
 
       {% else %}
@@ -39,6 +50,14 @@
 
     <!-- Section of site for users not logged in -->
     {% endif %} {% endif %} {% if user.is_authenticated == False %}
+    {% for msg in messages %}
+    <div class="alert-container alert-right">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{ msg }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+    {% endfor %}
     <container class="welcome-info">
       <h2>Group 2's Support Center</h2>
       <div class="home-image">&nbsp;</div>

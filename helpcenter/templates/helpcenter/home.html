@@ -19,6 +19,13 @@
       <article class="container">
          
 
+          {% for msg in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>{{ msg }}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+
       <h2><a href="\tickets\create" class="ticket-home-link">Create a Ticket!</a></h2>
       <small>Create a ticket here.</small>   
       {% if user.is_staff %}

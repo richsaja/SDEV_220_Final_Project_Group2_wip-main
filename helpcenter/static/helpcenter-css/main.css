@@ -239,28 +239,36 @@ td {
 }
 
 .ticket-btn-container {
-    display: flex;
-    justify-content: left;
+    /* display: flex;
+    justify-content: left; */
+
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: rgb(37, 37, 37);
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
 }
 
 .ticket-btn {
-    display: flex;
-    justify-content: center;
-    margin-left: 7px;
-    margin-bottom: 10px;
-    width: 75px;
-    text-align: center;
-    color:white;
-    text-decoration: none;
-    background-color: #5a5a5a;
-    border-radius: 5px;
-    padding: 1px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  background-color: #5a5a5a;
+  border-radius: 5px;
+  padding: 5px 15px;
 }
 
 .ticket-subject {
     margin-left: 15px;
     margin-right: 15px;
-    /* margin: 0px 20px 0px 20px; */
     background-color: rgb(238, 238, 238);
     outline: rgba(19, 19, 19, 0.349) solid 1px;
     padding: 10px;
@@ -327,14 +335,14 @@ td {
 
 .flex-image-home {
     margin-left: 25px;
-    flex: 0 0 450px; /* Set a fixed width for the image (adjust as needed) */
+    flex: 0 0 450px;
     height: 300px;
     background-image: url("../images/logged-in-splash.jpg");
     background-size: contain;
     background-repeat: no-repeat; 
     background-position: center center;
     border-radius: 8px;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.322));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.137));
 }
 
 .support-portal {
@@ -514,4 +522,35 @@ td {
     height: 26px;
     border-radius: 5px;
     margin-left: 7px;
+}
+
+
+.delete-btn {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: #5a5a5a;
+    border-radius: 5px;
+    padding: 5px 15px; 
+    width: 100px;
+}
+
+.status-pending {
+    color: rgba(255, 187, 0, 0.63);
+}
+.status-active {
+    color: rgba(23, 177, 23, 0.664);
+}
+.status-closed {
+    color: rgb(177, 36, 36);
+}
+
+.status-font {
+    font-family: "Mustica";
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.edit-status-btn {
+    width: 100px;
 }

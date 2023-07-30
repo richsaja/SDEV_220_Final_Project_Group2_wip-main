@@ -10,6 +10,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import JsonResponse
+from .forms import EditTicketStatusForm
 
 # Create your views here.
 
@@ -21,7 +23,7 @@ def tickets(request):
     # Check if the user is authenticated (logged in)
     if request.user.is_authenticated:
         # Get all posts by the currently logged-in user
-        user_tickets = request.user.posts.all()
+        user_tickets = request.user.posts.all().order_by('-created_at')
     else:
         user_tickets = []  # Return an empty list if the user is not logged in
 
@@ -46,9 +48,6 @@ def create(request):
     else:
         return render(request, 'helpcenter/create.html', {})
 
-# def list(request):
-
-#     return render(request, 'helpcenter/list.html', {})
 
 def about(request):
 
@@ -57,7 +56,7 @@ def about(request):
 def list(request):
 
     if request.user.is_staff:
-        user_tickets = Ticket.objects.all()
+        user_tickets = Ticket.objects.all().order_by('-created_at')
     else:
         user_tickets = [] 
 
@@ -135,3 +134,29 @@ def delete_ticket(request, ticket_id):
     del_ticket.delete()
     messages.success(request, ("Ticket Deleted"))
     return redirect('tickets')
+
+
+def update_ticket_status(request):
+    if request.method == "POST":
+    
+        ticket_id = request.POST.get('ticket_id')
+        new_status = request.POST.get("status")
+
+        return JsonResponse({"status": "success"})
+    else:
+        return JsonResponse({"status": "error"})
+    
+def edit_ticket_status(request, ticket_id):
+    ticket = get_object_or_404(Ticket, id=ticket_id)
+    if request.user.is_staff:
+        if request.method == 'POST':
+            form = EditTicketStatusForm(request.POST, instance=ticket)
+            if form.is_valid():
+                form.save()
+                return redirect("list")
+        else:
+            form = EditTicketStatusForm(instance=ticket)
+
+        return render(request, 'helpcenter/edit_ticket_status.html', {'form': form})
+    
+    return redirect("home")
